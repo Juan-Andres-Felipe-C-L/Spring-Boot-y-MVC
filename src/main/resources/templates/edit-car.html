@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar carro</title>
+</head>
+<body>
+
+<h1>Editar carro</h1>
+
+<form th:action="@{/cars/update/{id}(id=${car.id})}"
+      th:object="${car}"
+      method="post">
+
+    <label>Placa:</label>
+    <input type="text" th:field="*{carPlate}">
+
+    <br><br>
+
+    <label>Horas:</label>
+    <input type="number" th:field="*{hours}">
+
+    <br><br>
+
+    <button type="submit">
+        Actualizar
+    </button>
+
+</form>
+
+<br>
+
+<a th:href="@{/cars}">
+    Volver
+</a>
+
+</body>
+</html>

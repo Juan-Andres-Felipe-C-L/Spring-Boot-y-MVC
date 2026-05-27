@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear carro</title>
+</head>
+<body>
+
+<h1>Registrar carro</h1>
+
+<form th:action="@{/cars/save}" th:object="${car}" method="post">
+
+    <label>Placa:</label>
+    <input type="text" th:field="*{carPlate}">
+
+    <br><br>
+
+    <label>Horas:</label>
+    <input type="number" th:field="*{hours}">
+
+    <br><br>
+
+    <button type="submit">
+        Guardar
+    </button>
+
+</form>
+
+</body>
+</html>
